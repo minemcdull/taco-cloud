@@ -19,7 +19,9 @@ import lombok.Data;
 @Data
 @Entity
 public class Taco {
-
+	private String name;
+	private List<String> ingredients;
+/*
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -38,4 +40,5 @@ public class Taco {
     void createdAt() {
         this.createdAt = new Date();
     }
+    */
 }

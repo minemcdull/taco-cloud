@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.Ingredient.Type;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -54,6 +55,11 @@ public class DesignTacoController {
 	    return ingredients.stream()
 	            .filter(x -> x.getType().equals(type))
 	            .collect(Collectors.toList());
-
 	}
+    @PostMapping
+    public String processDesign(@Valid Taco design) {
+        log.info("Processing design: " + design);
+        //go to http get request to this path.
+        return "redirect:/orders/current";
+    }
 }
